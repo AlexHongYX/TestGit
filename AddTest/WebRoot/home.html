@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>home.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <form id="form">
+    	first number:<input type="text" name="first" id="first"/><br/>
+    	second number:<input type="text" name="second" id="second"/><br/>
+    	<input type="button" onclick="Add()" value="Add"/>
+    </form>
+    result:<input type="text" id="result"/>
+  </body>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript">
+  		function Add(){
+  			$(document).ready(function(){
+  				$.ajax({
+  					type:"POST",
+  					url:"servlet/AddServlet",
+  					data:$("#form").serialize(),
+  					success:function(result){
+  						$("#result").val(result);
+  					}
+  				})
+  			})
+  		}
+  </script>
+</html>
