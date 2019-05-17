@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<swiper autoplay="{{autoplay}}">
+  <block wx:for="{{imgUrls}}" wx:key="">
+    <swiper-item>
+      <image src="../image/page3.jpg" class="slide-image"  />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='zujian'>
+  <button class='search' bindtap="showA">查询预约</button>
+  <button class='appointment' bindtap="showB">组织申请</button>
+  <button bindtap="showC">联系我们</button>
+</view>
+
+<view wx:if="{{aFlag}}" class='first'>
+点击查询按钮跳转至查询页面，选择你需要查询的教学楼，楼号，楼层，选择周次，日期，节次，点击查询按钮即可查询到空教室，点击选择需要占的教室，确认后点击预约按钮，弹出预约成功弹窗即预约成功。
+  <button  type="primary" bindtap='jumpBtn1' class='button1'>查询</button>
+</view>
+<view wx:if="{{bFlag}}" class='second'>
+点击组织申请按钮跳转至申请页面，选择所属组织需要申请的教学楼，楼号，楼层，选择周次，日期，节次。
+  <button  type="primary" bindtap='jumpBtn2' class='button2'>申请</button>
+</view>
+<view wx:if="{{cFlag}}" class='women'>
+<text>前端设计：赵传禄 \n
+后台开发：洪杨潇 \n
+数据库设计：李梦园</text>
+</view>

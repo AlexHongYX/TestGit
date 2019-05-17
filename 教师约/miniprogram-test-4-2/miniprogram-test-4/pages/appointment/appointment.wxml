@@ -1,0 +1,77 @@
+<!--pages/appointment/appointment.wxml-->
+<!--pages/search/search.wxml-->
+  <view class="section section_gap">
+    <view>您选择的是第{{}}周周{{}}的教{{}}楼{{}}座{{}}层的第{{}}节课 </view>
+    <view class='yuyue'>查询结果如下，点击下方按钮即可预约:</view>
+  </view>
+  <view class='section'>
+  <view class="section__title">选择教室</view>
+  <view wx:for="roomData" wx:key="">
+    <!-- {
+      classroom: "201",
+      useage: true
+    } -->
+    教室{{item.classroom}}：{{item.useage}}
+    </view>
+    <checkbox-group name="checkbox">
+      <label>
+        <checkbox value="checkbox1" />
+        01
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>
+      <label>
+        <checkbox value="checkbox2" />
+        02
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>
+            <label>
+        <checkbox value="checkbox1" />
+        03
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>
+      <label>
+        <checkbox value="checkbox2" />
+        04
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>      <label>
+        <checkbox value="checkbox1" />
+        05
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>
+      <label>
+        <checkbox value="checkbox2" />
+        06
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>      <label>
+        <checkbox value="checkbox1" />
+        07
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>
+      <label>
+        <checkbox value="checkbox2" />
+        08
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>      <label>
+        <checkbox value="checkbox1" />
+        09
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>
+      <label>
+        <checkbox value="checkbox2" />
+        10
+        <image src='../image/page2.png' class='label-image'></image>
+      </label>
+    </checkbox-group>
+    
+  </view>
+
+<button
+  type="primary"
+  size="{{primarySize}}"
+  loading="{{loading}}"
+  plain="{{plain}}"
+  disabled="{{disabled}}"
+  bindtap="querySeat"
+>
+ 预约所选教室
+</button>

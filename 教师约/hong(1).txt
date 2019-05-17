@@ -1,0 +1,28 @@
+select classroom_last1.* from classroom_last1 
+where classroom_last1.week_start_end_id in (select week_start_end.week_start_end_id from week_start_end where /*查找第19周有课的id*/
+week_start_end.start<=19 and week_start_end.end >=19) and
+classroom_last1.day_time_id=1 and /*day_time_id限定*/build_buildnumber_id
+classroom_last1.build_buildnumber_id=1 and /*build_buildnumber_id限定*/
+classroom_last1.buildlevel_classroom in (select buildlevel_classroom_id from buildlevel_classroom where buildlevel=3);/*查询3楼所有教室id*/
+
+
+
+//第二版：直接返回教室号
+select classroom from buildlevel_classroom where (buildlevel_classroom_id in (
+        select classroom_last1.buildlevel_classroom from classroom_last1
+        where classroom_last1.week_start_end_id in (
+        select week_start_end.week_start_end_id from week_start_end where
+        week_start_end.start <![CDATA[<=]]>#{week} and week_start_end.end <![CDATA[>=]]>#{week}) and
+        classroom_last1.day_time_id=#{day_time_id} and
+        classroom_last1.build_buildnumber_id=#{build_buildnumber_id})) and
+        buildlevel_classroom.buildlevel=#{buildlevel}
+
+//end，一次查询出结果
+select classroom from buildlevel_classroom where buildlevel_classroom_id in (
+select classroom_last1.buildlevel_classroom from classroom_last1
+where classroom_last1.week_start_end_id in (
+select week_start_end.week_start_end_id from week_start_end where 
+week_start_end.start<=6 and week_start_end.end >=6) and
+classroom_last1.day_time_id=(select day_time.day_time_id from day_time where day_time.`day`=2 and day_time.time=56) and
+classroom_last1.build_buildnumber_id=(select build_buildnumber.build_buildnumber_id from build_buildnumber where build_buildnumber.build='一号教学楼' and build_buildnumber.buildnumber='F') and
+classroom_last1.buildlevel_classroom in (select buildlevel_classroom_id from buildlevel_classroom where buildlevel=3));

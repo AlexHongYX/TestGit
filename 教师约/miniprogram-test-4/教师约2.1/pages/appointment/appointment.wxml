@@ -1,0 +1,28 @@
+<!--pages/appointment/appointment.wxml-->
+<!--pages/search/search.wxml-->
+  <view class="section section_gap">
+    <view>您选择的是第{{week}}周周{{day}}的教{{build}}楼{{buildnumber}}座{{buildlevel}}层的第{{time}}节课 </view>
+    <view class='yuyue'>查询结果如下，点击下方按钮即可预约:</view>
+  </view>
+  <view class='section'>
+  <view class="section__title">选择教室</view>
+    <checkbox-group name="checkbox">
+      <label wx:for="{{roomData.data}}" wx:key="">
+        <checkbox value="checkbox1" />
+        {{item.classroom}}
+        <image src='../image/page2.png' class='label-image' wx:if="{{item.usage}}"></image>
+        <image src='../image/page1.png' class='label-image' wx:else></image>
+      </label>
+    </checkbox-group>
+  </view>
+
+<button
+  type="primary"
+  size="{{primarySize}}"
+  loading="{{loading}}"
+  plain="{{plain}}"
+  disabled="{{disabled}}"
+  bindtap="querySeat"
+>
+ 预约所选教室
+</button>
