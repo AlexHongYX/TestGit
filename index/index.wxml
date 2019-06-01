@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view>Print two number</view>
+<form id="form">
+  first:<input type='text' name="first" bindinput='FirstInput'></input>
+  second:<input type='text' name="second" bindinput="SecondInput"></input>
+</form>
+<button bindtap='changeName'>Add</button>
+<view>{{resultnum}}</view>
+
+<text>\n实现Ajax局部刷新</text>
