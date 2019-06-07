@@ -1,0 +1,26 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<script src="http://how2j.cn/study/jquery.min.js"></script>
+
+<body>
+	<h1 id="h" align="center" game="LOL">标题</h1>
+	<button id="btn1">获取align属性</button>
+	<button id="btn2">获取自定义属性</button>
+	<button id="btn3">修改game属性为CF</button>
+	<button id="btn4">删除game属性</button>
+	<script>
+		$("#btn1").click(function(){
+			alert($("#h").attr("align"));
+		});
+		$("#btn2").click(function(){
+			alert($("#h").attr("game"));
+		});
+		$("#btn3").click(function(){
+			$("#h").attr("game","CF");
+		});
+		$("#btn4").click(function(){
+			$("#h").removeAttr("game");
+		});
+	</script>
+</body>

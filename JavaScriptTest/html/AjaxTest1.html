@@ -1,0 +1,39 @@
+<!-- 1. 创建XHR对象
+2. 设置响应函数
+3. 设置要访问的页面
+4. 发出请求
+5. 当服务端的响应返回，响应函数被调用。
+6. 在响应函数中，判断响应是否成功，如果成功获取服务端返回的文本，并显示在span中。 -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="http://how2j.cn/study/jquery.min.js"></script>
+	</head>
+	<body>
+		<span>请输入账号：</span>
+		<input id="name" name="name" placeholder="输入账号进行验证" type="text"/>
+		<span id="checkResult"></span>
+		<script type="text/javascript">
+			var xmlHttp;
+			$("#name").keyup(function(){
+				
+				var name = $("name").val();
+				var url = "http://how2j.cn/study/checkName.jsp?name="+name;
+				
+				xmlHttp = new XMLHttpRequest();
+				
+				xmlHttp.onreadystatechange=checkResult;
+				xmlHttp.open("GET",url,true);
+				xmlHttp.send(null);
+			})
+			function checkResult(){
+				if(xmlHttp.readyState==4&&xmlHttp.status==200){
+					$("#checkResult").html(xmlHttp.responseText);
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="http://how2j.cn/study/jquery.min.js"></script>
+	</head>
+	<body>
+		<span>请输入账号：</span>
+		<input id="name" name="name" placeholder="输入账号进行验证" type="text"/>
+		<span id="checkResult"></span>
+		<script type="text/javascript">
+			$("#name").keyup(function(){
+				var urlTest = "http://how2j.cn/study/checkName.jsp";
+				var value = $(this).val();
+					$ajax({
+						url:urlTest,
+						data:{
+							"name":value
+						},
+						success:function(result){
+							$("#checkResult").html(result);
+						}
+					})
+			})
+		</script>
+	</body>
+</html>
