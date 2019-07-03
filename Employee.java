@@ -1,50 +1,33 @@
-package com.fehead.clone;
+package com.fehead.employeesort;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
+public class Employee implements Comparable<Employee>{
+    private String name;
+    private double salary;
 
-public class Employee implements Cloneable{
-        private String name;
-        private double salary;
-        private Date hireDay;
+    public Employee(String name,double salary)
+    {
+        this.name = name;
+        this.salary =salary;
+    }
 
-        public Employee() {
+    public String getName()
+    {
+        return name;
+    }
 
-        }
+    public double getSalary()
+    {
+        return salary;
+    }
 
-        public Employee(String name,double salary)
-        {
-            this.name = name;
-            this.salary = salary;
-            hireDay = new Date();
-        }
+    public void raiseSalary(double byPercent)
+    {
+        double raise = salary*byPercent/100;
+        salary += raise;
+    }
 
-        public Employee clone() throws CloneNotSupportedException{
-            //call Object.clone()
-            Employee cloned = (Employee) super.clone();
-
-            //clone mutable fields
-            cloned.hireDay = (Date)hireDay.clone();
-
-            return cloned;
-        }
-
-        //Set the hire day to a given date
-        public void setHireDay(int year,int month,int day){
-            Date newHireDay = new GregorianCalendar(year,month-1,day).getTime();
-
-            //Example of instance field mutation
-            hireDay.setTime(newHireDay.getTime());
-        }
-
-        public void raiseSalary(double byPercent)
-        {
-            double raise = salary*byPercent/100;
-            salary += raise;
-        }
-
-        public String toString()
-        {
-            return getClass().getName() + "[name=" + name + ",salary=" + salary + ",hireDay=" + hireDay + "]";
-        }
+    public int compareTo(Employee other)
+    {
+        return Double.compare(salary,other.salary);
+    }
 }
