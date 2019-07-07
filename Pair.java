@@ -1,4 +1,4 @@
-package com.fehead.pair;
+package com.fehead.pair3;
 
 public class Pair<String> {
     private String first;
@@ -10,7 +10,7 @@ public class Pair<String> {
         second = null;
     }
 
-    public Pair(String first,String second){
+    public Pair(String first, String second){
         this.first = first;
         this.second = second;
     }
