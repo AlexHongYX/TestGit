@@ -1,0 +1,194 @@
+ //判断一棵树是否是完全二叉树
+	//把所有空树的位置标记出来
+    public int binaryTreeComplete(Node root) {
+        Queue<Node> queue = new LinkedList<Node>();
+        if(root != null) {
+            queue.add(root);//offer
+        }
+        while(!queue.isEmpty()) {
+            Node cur = queue.peek();
+            queue.poll();
+            if(cur != null) {
+                queue.add(cur.left);
+                queue.add(cur.right);
+            }else {
+                break;
+            }
+        }
+        while(!queue.isEmpty()) {
+            Node cur = queue.peek();
+            if (cur != null){
+                //说明不是满二叉树
+                return -1;
+            }else{
+                queue.poll();
+            }
+        }
+        return 0;//代表是完全二叉树
+    }
+}
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        
+        List<List<Integer>> res = new ArrayList<>();
+        
+        if(root != null) {
+            queue.add(root);
+        }
+        
+        while(!queue.isEmpty()) {
+			//第一次值为1
+            int count = queue.size();
+            List<Integer> result = new ArrayList<Integer>();
+			//count控制组数
+            while(count > 0) {
+                TreeNode cur = queue.peek();
+                result.add(cur.val);
+                queue.poll();
+                if(cur.left != null) {
+                    queue.add(cur.left);
+                }
+                if(cur.right != null) {
+                    queue.add(cur.right);
+                }
+                count--;
+            }
+            res.add(result);
+			
+        }
+        return res;
+    }
+}
+//4.检查两颗树是否相同
+//类似先序遍历的过程
+先比较自己在比较左和右
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if((p == null && q != null) || (p != null && q== null) )
+            return false;
+        if(p == null && q == null)
+            return true;
+        if(p.val != q.val)
+            return false;
+
+        return isSameTree(p.left,q.left)&&isSameTree(p.right,q.right);
+    }
+}
+5、另一个树的子树 前序遍历的解法
+public boolean isSameTree(TreeNode p, TreeNode q) {
+	if((p == null && q != null) || (p != null && q== null) )
+		return false;
+	if(p == null && q == null)
+		return true;
+	if(p.val != q.val)
+		return false;
+
+	return isSameTree(p.left,q.left)&&isSameTree(p.right,q.right);
+	
+}
+    
+public boolean isSubtree(TreeNode s, TreeNode t) {
+	
+	if(s == null || t == null) return false;
+	if(isSameTree(s, t)) return true;
+	else if(isSubtree(s.left, t)) return true;
+	else if(isSubtree(s.right, t))return true;
+	else return false;
+}
+
+6、二叉树的最大深度
+相当于是后序遍历
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        } else {
+            int left = maxDepth(root.left);
+            int right = maxDepth(root.right);
+            return (left > right ? left : right) + 1;
+        }
+    }
+}
+7、平衡二叉树
+首先求root的高度差是否小于等于1，然后
+再去判断root.left和root.right是否平衡
+而这个的平衡，需要再次求left和right的
+高度。这样就导致了每个节点的高度都需要
+求。时间复杂度为O(n^2);
+isBalanced递归了n次，每次的消耗是求高度
+
+前序遍历的解法
+public boolean isBalanced(Node root) {
+	if(root == null) {
+		return true;
+	}
+	int leftHeight = height(root.left);
+	int rightHeight = height(root.right);
+	//root是否为平衡树
+	return Math.abs(leftHeight-rightHeight) < 2
+			//左子树是否为平衡树
+			&& isBalanced(root.left);
+			//右子树是否为平衡树
+			&& isBalanced(root.right);
+}
+8、对称二叉树
+写两个函数的原因是：我们判断是否是对称
+需要判断root的左子树和右子树是否对称而
+isSymmetric这个函数只有一个参数，不能解决当前问题
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        return isSymmetricChild(root.left,root.right);
+    }
+    public boolean isSymmetricChild(TreeNode leftTree,TreeNode rightTree) {
+        
+        if((leftTree == null && rightTree != null) 
+		|| (leftTree != null && rightTree == null)) {
+            return false;
+        }
+        if(leftTree == null && rightTree == null) {
+            return true;
+        }
+        return (leftTree.val == rightTree.val) && 
+            isSymmetricChild(leftTree.left,rightTree.right) &&
+            isSymmetricChild(leftTree.right,rightTree.left);
+    }
+}
+进阶面试题：
+1、二叉树创建字符串
+class Solution {
+    public String tree2str(TreeNode t) {
+        StringBuilder sb = new StringBuilder();
+        tree2strChild(t,sb);
+        return sb.toString();
+    }
+    
+    public void tree2strChild(TreeNode t,StringBuilder sb) {
+        if(t == null) {
+            return ;
+        }
+        sb.append(t.val);
+        if(t.left != null) {
+            sb.append("(");
+            tree2strChild(t.left,sb);
+            sb.append(")");
+        }else {
+           if(t.right == null) {
+                return;
+            }else {
+                sb.append("()");
+            }
+        }
+        if(t.right == null) {
+            return;
+        }else{
+            sb.append("(");
+            tree2strChild(t.right,sb);
+            sb.append(")");
+        }
+    }
+    
+}
