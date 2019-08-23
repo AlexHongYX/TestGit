@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js计算器</title>
+		<link href="css/Calc.css" rel="stylesheet" />
+<!-- 		<script src="js/jquery-1.11.0.js"></script> -->
+	</head>
+	<body>
+<!-- 		
+		1)页面布局
+			table:5行4列 表格上面有个input文本框
+			div+css:层级布局 
+		2)给清除键/退格键/显示框/等号单独设置id属性
+			给数字键(包含小数点)/运算符键设置class属性
+		3)通过id属性/class属性获取按键对象
+-->
+		<center>
+			<input id="show" disabled="disabled"/>
+			<table align="center">
+				<tr>
+					<td id="clear">C</td>
+					<td id="del"><-</td>
+					<td class="operator"></td>
+					<td class="operator">/</td>
+				</tr>
+				<tbody>
+					<tr>
+						<td class="number">7</td>
+						<td class="number">8</td>
+						<td class="number">9</td>
+						<td class="operator">*</td>
+					</tr>
+					<tr>
+						<td class="number">4</td>
+						<td class="number">5</td>
+						<td class="number">6</td>
+						<td class="operator">-</td>
+					</tr>
+					<tr>
+						<td class="number">1</td>
+						<td class="number">2</td>
+						<td class="number">3</td>
+						<td class="operator">+</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="number">0</td>
+						<td class="number">.</td>
+						<td id="result">=</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
+	</body>
+	<script>
+		var firstVal = "";
+		var secondVal = "";
+		var operatorVal = "";
+			
+		var clear = document.getElementById("clear");
+		var del = document.getElementById("del");
+		var show = document.getElementById("show");
+		var result = document.getElementById("result");
+		
+		var numbers = document.getElementsByClassName("number");
+		var operators = document.getElementsByClassName("operator");
+		
+		for(var i=0;i<numbers.length;i++){
+			numbers[i].onclick = function(){
+// 				var text = this.innerText;
+// 				alert(text);
+				// 小数点不能成为第一位
+				if(this.innerText=="."){
+					// 如果当前数字中不存在".",并且当前数字的长度不为空
+					if(firstVal.indexOf(".")==-1&&firstVal.length>=1){
+						firstVal += this.innerText;
+						// alert(firstVal);
+						show.value += firstVal.substring(firstVal.length-1,firstVal.length);
+					}
+				}else{
+					firstVal += this.innerText;
+// 					if(secondVal==""&&){
+// 						show.value = firstVal;
+// 					}else{
+// 						show.value += firstVal;
+// 					}
+// 					var showValue = show.value;
+// 					showValue += firstVal%10;
+// 					show.value = showValue;
+
+					// 经过大量的测试,show.value要出现类似xx+xx的操作,每次需要+=firstVal的每一位
+					if(firstVal.length>1){
+						show.value += firstVal.substring(firstVal.length-1,firstVal.length);
+					}else{
+						show.value += firstVal%10;
+					}
+					
+				}
+			}
+		}
+		
+		for(var j=0;j<operators.length;j++){
+			operators[j].onclick = function(){
+				/**
+				 * 判断此时到底secondVal是否为空
+				 * 		若为空，则表示是第一次进行的运算，则直接将firstVal的值赋给secondVal即可
+				 * 		若不为空，则表示在已经运算过的结果的基础上，再次运算(此时该点击"="，或者再点击一个运算符自动出当前的结果)
+				 */
+				if(secondVal==""){
+					// 为空
+					secondVal = firstVal;
+					firstVal = "";
+					operatorVal = this.innerText;
+					show.value += operatorVal;
+				}else{
+					// 不为空,点击"="，或者再点击一个运算符自动出当前的结果
+					// 若正常输入一个值
+					if(firstVal != ""){
+						resultFun();
+					}
+					// 若没正常输入一个值,再点击运算符,相当于是在更新运算符呢
+					operatorVal = this.innerText;
+					
+					// 先将显示的页面中最后一个字符删掉
+					var showValue = show.value;
+					showValue = showValue.substring(0,showValue.length-1);
+					show.value = showValue;
+					// 再将已经更新过的操作符显示
+					show.value += operatorVal;
+				}
+			}
+		}
+		
+		// 清除逻辑
+		clear.onclick = function(){
+			// 将所有的值清空即可
+			firstVal = "";
+			secondVal = "";
+			operatorVal="";
+			show.value="";
+		}
+		// 退格逻辑
+		del.onclick = function(){
+			
+			// 先判断当前有值没
+			if(firstVal.length!= 0){
+				firstVal = firstVal.substring(0,firstVal.length-1);
+				// show.value = firstVal;
+				// 将显示的页面中最后一个字符删掉
+				// 显示的字符串删除最后一个字符
+				var showValue = show.value;
+				showValue = showValue.substring(0,showValue.length-1);
+				show.value = showValue;
+			}
+			
+			// 遇到操作符就不能删除（只能修改，在遍历时进行修改）,刚好保证了操作符前面的数字也不能再删除
+		}
+		
+		// "="逻辑
+		result.onclick = function(){
+			resultFun();
+		}
+		
+		function resultFun(){
+			var one = new Number(secondVal);  // 代表的是第一个操作数<保存在secondVal中>
+			var two = new Number(firstVal);   // 代表的是第二个操作数
+			// 运算结果
+			var ret = null;
+			switch(operatorVal){
+				case "+":
+					ret = one+two;
+					break;
+				case "-":
+					ret = one-two;
+					break;
+				case "*":
+					ret = one*two;
+					break;
+				case "/":
+					if(two==0){
+						firstVal = "";
+						secondVal = "";
+						operatorVal = "";
+					}else{
+						ret = one/two;
+					}
+					break;
+			}
+			if(two == 0){
+				show.value = "除数不能为0";
+			}else {
+				secondVal = new Number(ret).toFixed(6);
+				firstVal = "";
+				show.value = secondVal;
+			}
+		}
+			
+	</script>
+</html>
