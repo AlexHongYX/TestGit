@@ -1,0 +1,18 @@
+算法：
+	红黑树（和HashMap结合看）
+	B+树（和数据库索引结合看）
+	-贪心算法
+	-动态规划
+	-回溯
+
+Linux操作系统：
+	基本操作
+	在Linux下进行Java开发，不要使用Windows了
+	基本概念
+
+框架：
+	SpringMVC流程及概念
+	MyBatis简单概念
+
+录频再看看：
+	JDBC
