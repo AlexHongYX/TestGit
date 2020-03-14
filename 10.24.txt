@@ -1,9 +1,9 @@
 	
 
-	Á·Ï°
+	ç»ƒä¹ 
 	
-	3¡¢ÊÖËºÉú²úÏû·ÑÕßÄ£ÐÍ£ºÊ¹ÓÃ×èÈû¶ÓÁÐ/Condition»úÖÆ
+	3ã€æ‰‹æ’•ç”Ÿäº§æ¶ˆè´¹è€…æ¨¡åž‹ï¼šä½¿ç”¨é˜»å¡žé˜Ÿåˆ—/Conditionæœºåˆ¶
 
-	Ê¹ÓÃ×èÈû¶ÓÁÐ´æÔÚÁ½¸öÎÊÌâ£º
-		1¡¢wait()ºÍnotify()ÔõÃ´¼Ó
-		2¡¢ÎªÉ¶·ÇµÃÓÃÒ»¸öProducer
+	ä½¿ç”¨é˜»å¡žé˜Ÿåˆ—å­˜åœ¨ä¸¤ä¸ªé—®é¢˜ï¼š
+		1ã€wait()å’Œnotify()æ€Žä¹ˆåŠ 
+		2ã€ä¸ºå•¥éžå¾—ç”¨ä¸€ä¸ªProdu
