@@ -19,7 +19,7 @@ public class Test1<T>{
         //---------------
         Test1 gen2 = new Test1();
         gen2.setObj("abc");
-        String str1 = (String)gen2.getObj();
+        String str1 = (String)gen2.getOb
         System.out.println(str1);
         Test1 gen3 = new Test1();
         gen3.setObj(10);
