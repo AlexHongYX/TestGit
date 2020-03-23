@@ -4,8 +4,7 @@ public class Test1<T>{
     T obj;
 
     public T getObj(){
-        return obj;
-    }
+        return obj
 
     public void setObj(T obj){
         this.obj = obj;
