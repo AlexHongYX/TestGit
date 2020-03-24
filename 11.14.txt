@@ -1,6 +1,5 @@
 了解：
-	√ JVM相关内容
-
+	√ JVM相关内
 熟悉：
 	√ Java多线程synchronized锁
 	√ J内存划分
