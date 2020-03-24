@@ -3,7 +3,7 @@
 
 熟悉：
 	√ Java多线程synchronized锁
-	√ JVM内存划分
+	√ J内存划分
 
 编程
 	√ 刷题*40
