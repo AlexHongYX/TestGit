@@ -1,14 +1,14 @@
-�˽⣺
-	�� JVM�������
+了解：
+	√ JVM相关内容
 
-��Ϥ��
-	�� Java���߳�synchronized��
-	�� JVM�ڴ滮��
+熟悉：
+	√ Java多线程synchronized锁
+	√ JVM内存划分
 
-���
-	�� ˢ��*40
-	��ָOffer*2
-	��ת�������Сֵ����ָOffer��⣩
+编程
+	√ 刷题*40
+	剑指Offer*2
+	旋转数组的最小值（Offer题解）
 
-ÿ��һ�⣺
+每日一题：
 	11.15
