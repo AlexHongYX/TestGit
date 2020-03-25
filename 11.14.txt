@@ -2,7 +2,7 @@
 	√ JVM相关内
 熟悉：
 	√ Java多线程synchronized锁
-	√ J内存划分
+	√ J内存划
 
 编程
 	√ 刷题*40
