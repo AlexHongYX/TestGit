@@ -4,7 +4,6 @@
 	√ Java多线程synchronized锁
 	√ J内存划
 
-编程
 	√ 刷题*40
 	剑指Offer
 	旋转数组的最小值（Offer题解）
