@@ -1,47 +1,47 @@
-¸´Ï°Êý¾Ý½á¹¹+ÏîÄ¿+¼¯ºÏÀà+·´Éä+Éè¼ÆÄ£Ê½+JVM
+å¤ä¹ æ•°æ®ç»“æž„+é¡¹ç›®+é›†åˆç±»+åå°„+è®¾è®¡æ¨¡å¼+JVM
 
-	¡Ì ×î´ó×Ó¶ÎºÍÎÊÌâ£º¶¯Ì¬¹æ»®ÏÈ²»¿´
+	âˆš æœ€å¤§å­æ®µå’Œé—®é¢˜ï¼šåŠ¨æ€è§„åˆ’å…ˆä¸çœ‹
 
-	¡Ì ¿ìÅÅ+Ã°ÅÝ
-	¡Ì ¶ÑÅÅ
-	¡Ì TopK£ºÃ°ÅÝ£¨µÍ¼¶£©+Î¬»¤Ò»¸ök¸öÔªËØµÄÐ¡¸ù¶Ñ£¨¸ß¼¶£©
-	¡Ì ¶þ·Ö²éÕÒ
+	âˆš å¿«æŽ’+å†’æ³¡
+	âˆš å †æŽ’
+	âˆš TopKï¼šå†’æ³¡ï¼ˆä½Žçº§ï¼‰+ç»´æŠ¤ä¸€ä¸ªkä¸ªå…ƒç´ çš„å°æ ¹å †ï¼ˆé«˜çº§ï¼‰
+	âˆš äºŒåˆ†æŸ¥æ‰¾
 
-	¡Ì Á´±í£ºÁ½Á´±í½»µã£¬Á´±íÄæÖÃ£¬"Á´±íÈë»·¿Ú"£¬"¸´ÔÓÁ´±í¸´ÖÆ"
-	¡Ì Õ»£º"Á½Õ»ÊµÏÖ¶ÓÁÐ"£¬×îÐ¡/´óÕ»£¬ÅÐ¶Ï³öÏÖË³Ðò
-	¡Ì Ê÷£º"Ç°ÖÐºó"·ÇµÝ¹é±éÀú»¹ÐèÒª¼ÓÇ¿
+	âˆš é“¾è¡¨ï¼šä¸¤é“¾è¡¨äº¤ç‚¹ï¼Œé“¾è¡¨é€†ç½®ï¼Œ"é“¾è¡¨å…¥çŽ¯å£"ï¼Œ"å¤æ‚é“¾è¡¨å¤åˆ¶"
+	âˆš æ ˆï¼š"ä¸¤æ ˆå®žçŽ°é˜Ÿåˆ—"ï¼Œæœ€å°/å¤§æ ˆï¼Œåˆ¤æ–­å‡ºçŽ°é¡ºåº
+	âˆš æ ‘ï¼š"å‰ä¸­åŽ"éžé€’å½’éåŽ†è¿˜éœ€è¦åŠ å¼º
 
 JavaSE
-	¡Ì ³éÏóÀàÓë½Ó¿ÚÇø±ð
-	¡Ì ÖØÐ´ÓëÖØÔØÇø±ð
-	¡Ì ·´ÉäµÄÀí½â
-	¡Ì ¼¯ºÏ¿ò¼ÜµÄµ×²ã£¨HashMapÓëHashTableµÄÇø±ð£¬ConcurrentHashmap£©
-		Collection.sort()Ê²Ã´ÅÅÐòÊµÏÖ£¬ComparableºÍComparator
-		LinkedListÓëArrayListµÄÇø±ð
-	¡Ì Ïß³Ì³Ø+¶¨Ê±µ÷¶È³Ø
-	¡Ì JVM£ºGCÊÕ¼¯Æ÷£¬JVM·ÖÇø£¬ÄÚ´æÄ£ÐÍ£¬µ÷Õû¶ÑµÄ´óÐ¡
-	¡Ì Àà¼ÓÔØ¹ý³Ì
-	¡Ì new Ò»¸ö¶ÔÏóµÄ¹ý³Ì
-	¡Ì Éè¼ÆÄ£Ê½£ºµ¥Àý+¹¤³§+Ä£°å
-	IO£º¶ÔÏóÁ÷+ÐòÁÐ»¯
+	âˆš æŠ½è±¡ç±»ä¸ŽæŽ¥å£åŒºåˆ«
+	âˆš é‡å†™ä¸Žé‡è½½åŒºåˆ«
+	âˆš åå°„çš„ç†è§£
+	âˆš é›†åˆæ¡†æž¶çš„åº•å±‚ï¼ˆHashMapä¸ŽHashTableçš„åŒºåˆ«ï¼ŒConcurrentHashmapï¼‰
+		Collection.sort()ä»€ä¹ˆæŽ’åºå®žçŽ°ï¼ŒComparableå’ŒComparator
+		LinkedListä¸ŽArrayListçš„åŒºåˆ«
+	âˆš çº¿ç¨‹æ± +å®šæ—¶
+	âˆš JVMï¼šGCæ”¶é›†å™¨ï¼ŒJVMåˆ†åŒºï¼Œå†…å­˜æ¨¡åž‹ï¼Œè°ƒæ•´å †çš„å¤§å°
+	âˆš ç±»åŠ è½½è¿‡ç¨‹
+	âˆš new ä¸€ä¸ªå¯¹è±¡çš„è¿‡ç¨‹
+	âˆš è®¾è®¡æ¨¡å¼ï¼šå•ä¾‹+å·¥åŽ‚+æ¨¡æ¿
+	IOï¼šå¯¹è±¡æµ+åºåˆ—åŒ–
 
 SQL
-	¡ÌÓÅ»¯
-	¡ÌÉ¾³ý±íµÄ·½Ê½
-	¡ÌdropÓëdeleteµÄÇø±ð
-	¡ÌÊÂÎñ¸ôÀë¼¶±ð
-	ÈçºÎ¼ÓËø
-	¡ÌË÷Òýµ×²ãÊµÏÖ
-	¡ÌÊý¾ÝÀàÐÍµÄÇø±ð
+	âˆšä¼˜åŒ–
+	âˆšåˆ é™¤è¡¨çš„æ–¹å¼
+	âˆšdropä¸Ždeleteçš„åŒºåˆ«
+	âˆšäº‹åŠ¡éš”ç¦»çº§åˆ«
+	å¦‚ä½•åŠ é”
+	âˆšç´¢å¼•åº•å±‚å®žçŽ°
+	âˆšæ•°æ®ç±»åž‹çš„åŒºåˆ«
 
 Spring
-	SpringIOC¸ÅÄî
-	SpringAOP¸ÅÄî
-	SpringMVCÖ´ÐÐÁ÷³Ì
+	SpringIOCæ¦‚å¿µ
+	SpringAOPæ¦‚å¿µ
+	SpringMVCæ‰§è¡Œæµç¨‹
 
 JavaWeb
 	
 
-ÍøÂç
-	Îå²ã·Ö²ã
+ç½‘ç»œ
+	äº”å±‚åˆ†å±‚
 
