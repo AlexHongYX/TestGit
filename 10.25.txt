@@ -1,7 +1,7 @@
 
-	ConcurrentHashMap×Ü½á	
-	ThreadLocal×Ü½á
-	IO£º¶ÔÏóÁ÷+ĞòÁĞ»¯
+	ConcurrentHashMapæ€»	
+	ThreadLocalæ€»ç»“
+	IOï¼šå¯¹è±¡æµ+åºåˆ—åŒ–
 
 	Socket
 
