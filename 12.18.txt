@@ -1,8 +1,7 @@
-	Á½¸ö×Ö·û´®µÄ×î³¤¹«¹²×Ó´®
+	ä¸¤ä¸ªå­—ç¬¦ä¸²çš„æœ€é•¿å…¬å…±å­ä¸²
 	https://blog.csdn.net/qq_35082030/article/details/79973562
 
-	https://blog.csdn.net/w_y_x_y/article/details/82288178
+	https://blog.csdn.net/w_y_x_y/article/details/8228
+	Linuxå¸¸è§æ“ä½œ
 
-	Linux³£¼û²Ù×÷
-
-	ÃæÊÔ×Ü½á
+	é¢è¯•æ€»ç»“
