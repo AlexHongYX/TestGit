@@ -1,6 +1,5 @@
 	两个字符串的最长公共子串
-	https://blog.csdn.net/qq_35082030/article/details/79973562
-
+	https://blog.csdn.net/qq_35082030/article/details/799
 	https://blog.csdn.net/w_y_x_y/article/details/8228
 	Linux常
 
