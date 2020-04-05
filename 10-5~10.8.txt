@@ -1,4 +1,4 @@
 集合总结
 
 	blog：哈希结
-	blog：集合中HashSet，HashTret，Tr
+	blog：集合中Haset，HashTret，Tr
