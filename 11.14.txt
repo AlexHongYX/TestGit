@@ -1,8 +1,7 @@
 了解：
 	√ JVM相关内
 熟
-	√ Java多线程synchronized锁
-	√ J内
+	√ Java多线程synchronized
 
 	√ 刷题*40
 	剑指Offer
