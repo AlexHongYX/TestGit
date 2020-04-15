@@ -2,7 +2,7 @@
 	√ JVM相关内
 熟
 	√ Java多线程synchronized锁
-	√ J内存划
+	√ J内
 
 	√ 刷题*40
 	剑指Offer
