@@ -14,7 +14,7 @@ JavaSE
 	√ 抽象类与接口区别
 	√ 重写与重载区别
 	√ 反射的理解
-	√ 集合框架的底层（HashMap与HashTable的区别，ConcurrentHashmap）
+	√ 集合框架的底层（HhMap与HashTable的区别，ConcurrentHashmap）
 		Collection.sort()什么排序实现，Comparable和Comparator
 		LinkedList与ArrayList的区别
 	√ 线程池+定时
