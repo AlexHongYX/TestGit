@@ -5,8 +5,7 @@ blog：集合中HashSetashMap，TreeSet，TreeMap
 
 httpServlet源码
 servletContext源码
-优化一下内部类的blog
-
+优化一下内部类的blo
 √ static：包括内部类
 
 blog：单例模式多例
