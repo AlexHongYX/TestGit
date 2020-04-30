@@ -1,5 +1,5 @@
 blog：哈希表总结
-blog：集合中HashSet，HashMap，TreeSet，TreeMap
+blog：集合中HashSetashMap，TreeSet，TreeMap
 
 泛型总结
 
