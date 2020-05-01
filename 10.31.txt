@@ -5,6 +5,6 @@
 		synchronized原理+优化
 		Lock锁体系+AQS同步器
 		线程池
-		多线程常用API
+		多线程常用AP
 	
 	网络录屏（还剩20分钟）
