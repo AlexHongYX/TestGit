@@ -1,8 +1,7 @@
 
 	ConcurrentHashMap总	
 	ThreadLocal
-	IO：对象流+序列化
-
+	IO：对象流+序列
 	Socket
 
 	JavaWeb
