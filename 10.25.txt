@@ -1,6 +1,6 @@
 
 	ConcurrentHashMap总	
-	ThreadLocal
+	ThreadLoc
 	IO：对象流+序列
 	Socket
 
