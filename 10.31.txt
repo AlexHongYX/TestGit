@@ -1,6 +1,5 @@
 	刷题
-	剑指Offer
-
+	剑指Off
 	总结多线程半部分
 		synchronized原理+优化Lock锁体系+AQS同步器
 		线程池
