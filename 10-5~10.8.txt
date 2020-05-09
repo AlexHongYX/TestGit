@@ -1,4 +1,4 @@
 集合总结
 
 	blog：哈
-	blog：集合Haset，HashTret，
+	blog：集合Hset，HashTret，
