@@ -3,7 +3,7 @@
 熟
 	√ Java多线程synchronized
 
-	√ 刷题*40
+	√ 刷40
 	剑指Offer
 	旋转数组的最小值（Offer题解）
 
