@@ -1,4 +1,4 @@
 集合总结
 
 	bl
-	blog：集Hset，HashTt，
+	blog：集Hset，HshTt，
